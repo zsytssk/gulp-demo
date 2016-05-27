@@ -1,0 +1,23 @@
+-? pc  
+-> pc 版居中显示  
+-> 题目更新 之后还要居中怎么处理  
+
+-? pc mobile 要分两个项目还是放在一起  
+-> pc/pug+postcss mobile/pug+postcss pc/js.. mobile/js..  
+-> watch pc... mobile..  
+
+-| 弹出层单独一个css  
+-> 因为这是一个单独的 事情 到时候可能会删除  
+
+-| 如何防止我的样式和页面的样式出现冲突  
+-> 查看页面有没有 pop class  
+
+-| pc 版 的input:checkbox 的样式  
+-> 我可以通过li写出来  
+-> js 监听 cheched 改变 toggle class  
+
+-? 能不能用 layui.js  
+-> 先用lightbox  
+
+# 解决  
+-| 都是720  

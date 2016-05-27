@@ -1,0 +1,202 @@
+@charset "UTF-8";
+@import "reset.css";
+@import "variables.css";
+@import "extend.css";
+.pop-questionnaire h3,
+.pop-questionnaire h4 {
+  font-weight: normal;
+}
+.pop-questionnaire {
+  width: 508px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 14px;
+  color: #666;
+  display: none;
+  font-family: arial, "Microsoft YaHei";
+  border-top: 1px solid transparent;
+  overflow: hidden;
+}
+.pop-questionnaire .fix-border-radius-top  {
+  width: 100%;
+  height: 5px;
+  margin-bottom: -1px;
+  position: relative;
+}
+.pop-questionnaire .fix-border-radius-bottom .left,
+.pop-questionnaire .fix-border-radius-bottom .right,
+.pop-questionnaire .fix-border-radius-top .left,
+.pop-questionnaire .fix-border-radius-top .right {
+  @extend .bg_contain;
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.pop-questionnaire .fix-border-radius-top .left,
+.pop-questionnaire .fix-border-radius-top .right {
+  background-image: url(../../../dist/pc/images/bg-circle-top.png);
+}
+.pop-questionnaire .fix-border-radius-bottom .left,
+.pop-questionnaire .fix-border-radius-bottom .right {
+  background-image: url(../../../dist/pc/images/bg-circle-bottom.png);
+}
+.pop-questionnaire .fix-border-radius-top .left,
+.pop-questionnaire .fix-border-radius-bottom .left {
+  left: 0;
+}
+.pop-questionnaire .fix-border-radius-top .right,
+.pop-questionnaire .fix-border-radius-bottom .right {
+  right: 0;
+  background-position: right 0;
+}
+.pop-questionnaire .fix-border-radius-con {
+  background-color: #fff;
+  padding: 1px 0;
+}
+.pop-questionnaire .fix-border-radius-bottom {
+  width: 100%;
+  height: 5px;
+  @extend .bg_contain;
+  margin-top: -1px;
+  position: relative;
+}
+.pop-questionnaire .container {
+  width: 466px;
+  margin: auto;
+}
+.pop-questionnaire h3.banner {
+  margin-top: 20px;
+  @extend .pop-questionnaire .container;
+  height: 77px;
+  color: #fff;
+  @extend .bg_contain;
+  background-image: url(../../../dist/pc/images/banner.png);
+  text-align: center;
+  line-height: 28px;
+  font-size: 18px;
+}
+.pop-questionnaire h3.banner span {
+  display: inline-block;
+  padding-top: 8px;
+}
+.pop-questionnaire h3.banner em {
+  color: $color-text-emphasize2;
+  font-weight: bold;
+  line-height: ;
+  text-align: center;
+}
+.pop-questionnaire .question-item {
+  @extend .pop-questionnaire .container;
+}
+.pop-questionnaire .question-item h4.title {
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  line-height: 24px;
+  padding: 20px 0 10px 16px;
+  position: relative;
+}
+.pop-questionnaire .question-item h4.title .num {
+  position: absolute;
+  left: 0;
+  top: 20px;
+}
+.question-item .in-con li .check-item {
+  position: relative;
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+.question-item .in-con li .check-item input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.question-item .in-con li .check-item .icon-check {
+  @extend .bg_contain-d_ib;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../../dist/pc/images/icon-unchecked.png);
+  margin: 0 9px;
+}
+.question-item .in-con li.selected .check-item  .icon-check {
+  background-image: url(../../../dist/pc/images/icon-checked.png);
+}
+.pop-questionnaire .con .tip {
+  text-align: center;
+  margin: 15px 0 20px;
+}
+.pop-questionnaire .con .tip em {
+  color: $color-text-emphasize1;
+}
+.pop-questionnaire .btn-box {
+  background-color: #eee;
+  text-align: center;
+  padding: 12px 0 6px;
+}
+.pop-questionnaire .btn-box button,
+.pop-questionnaire .btn-box a {
+  display: inline-block;
+  width: 160px;
+  height: 48px;
+  line-height: 45px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  @extend .bg_contain;
+  cursor: pointer;
+  font-family: "Microsoft YaHei";
+}
+.pop-questionnaire .btn-box button:first-child,
+.pop-questionnaire .btn-box a:first-child {
+  margin-right: 20px;
+}
+.btn-questionnaire1 {
+  background-image: url(../../../dist/pc/images/btn-questionnaire1.png);
+}
+.btn-questionnaire2 {
+  background-image: url(../../../dist/pc/images/btn-questionnaire2.png);
+}
+.btn-questionnaire-grey {
+  background-image: url(../../../dist/pc/images/btn-questionnaire3.png);
+}
+.pop-questionnaire-giveup,
+.pop-questionnaire-complete {
+  width: 438px;
+}
+.pop-questionnaire-giveup .con,
+.pop-questionnaire-complete .con {
+  color: #333;
+  padding: 30px 0;
+  text-align: center;
+}
+.pop-questionnaire-complete .con .txt {
+  font-size: 16px;
+}
+.pop-questionnaire-giveup .con .txt {
+  font-size: 18px;
+  line-height: 44px;
+}
+.pop-questionnaire-giveup .con .txt em,
+.pop-questionnaire-complete .con .txt em {
+  color: $color-text-emphasize1;
+}
+.pop-questionnaire-complete .con .icon-check-big-circle {
+  @extend .bg_contain;
+  margin: 0 auto 10px;
+  background-image: url(../../../dist/pc/images/icon-check-big-circle.png);
+  height: 63px;
+  width: 63px;
+}
+.pop-questionnaire-complete .con .icon-box {
+  color: #fb7a7a;
+  font-size: 24px;
+  margin-bottom: 5px;
+}

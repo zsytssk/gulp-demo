@@ -1,0 +1,30 @@
+{
+  "name": "gulptest",
+  "version": "1.0.0",
+  "description": "this is a test for gulp",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "cssnano": "^3.5.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-csscomb": "^3.0.7",
+    "gulp-cssfmt": "^1.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.0",
+    "gulp-pug": "^1.2.0",
+    "merge-stream": "^1.0.0",
+    "postcss-extend": "^1.0.1",
+    "postcss-import": "^8.0.2",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^1.2.0",
+    "postcss-url": "^5.1.1",
+    "pug": "^2.0.0-alpha3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
