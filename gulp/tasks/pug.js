@@ -8,15 +8,11 @@ var options = {
 };
 
 function runPug() {
-  var pugPc = gulp.src(dirs.src + '/pc/pug/questionnaire.pug')
+  var template = gulp.src(dirs.src + '/pug/*.*')
     .pipe(errorHandler())
     .pipe(pug(options))
-    .pipe(gulp.dest(dirs.dist + '/pc'));
-  var pugMobile = gulp.src(dirs.src + '/mobile/pug/questionnaire.pug')
-    .pipe(errorHandler())
-    .pipe(pug(options))
-    .pipe(gulp.dest(dirs.dist + '/mobile'));
-  return merge(pugPc, pugMobile);
+    .pipe(gulp.dest(dirs.dist));
+  return merge(template);
 }
 
 module.exports = runPug;

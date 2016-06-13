@@ -1,0 +1,26 @@
+# 2016/06/12 10:34  
+-| 弹出层的个数  
+-> 多人场新手引导 | pop.multi.guide  
+fs-popup multiGuide-pop-wrap  
+-> 多人场排名 | pop.multi.Rank | 完成排名提示 complete  
+fs-popup multiRank-pop-wrap  
+-> 多人场结算 | pop.multi.roundRank | 完成排名提示 complete  
+fs-popup multiRoundRank-pop-wrap  
+-> 多人场结算 | pop.multi.roundEndWait | 比赛完成 等待别人完成  
+fs-popup multiRoundEndWaitk-pop-wrap  
+-> 多人场游戏规则 | pop.multi.gameRule | 完成排名提示 complete  
+fs-popup multiGameRule-pop-wrap  
+-> 多人场报名选择 | pop.multi.selectType | 选择竞技类型  
+fs-popup multiSelectType-pop-wrap  
+-> 多人场报名等待 | pop.multi.selectedwait | 选择成功 等待  
+fs-popup multiSelectWait-pop-wrap  
+---&&---  
+-> 充值改版 | pop.guide  
+-> 收获改版 | pop.multi.guide  changeout-pop-wrap  
+产品说这个页面不需要做了我靠 这需要再确认下  
+
+
+
+
+
+-| 鱼群减速 --> 冰冻对手

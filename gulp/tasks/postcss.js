@@ -40,26 +40,18 @@ var processors = [
 
 function runPostcss() {
   var files = [
-    dirs.src + '/pc/postcss/questionnaire.css',
-    dirs.src + '/mobile/postcss/questionnaire.css'
+    dirs.src + '/postcss/*.*'
   ]
-  var postcssPC = gulp.src(files[0])
+
+  var style = gulp.src(files[0])
     .pipe(errorHandler())
     .pipe(postcss(processors, {
-      to: dirs.dist + '/pc/style/images'
+      to: dirs.dist + '/css/images'
     }))
     .pipe(csscomb())
-    .pipe(gulp.dest(dirs.dist + '/pc/css'));
+    .pipe(gulp.dest(dirs.dist + '/css'));
 
-  var postcssMobile = gulp.src(files[1])
-    .pipe(errorHandler())
-    .pipe(postcss(processors, {
-      to: dirs.dist + '/mobile/css/images'
-    }))
-    .pipe(csscomb())
-    .pipe(gulp.dest(dirs.dist + '/mobile/css'));
-
-  return merge(postcssPC, postcssMobile);
+  return merge(style);
 }
 
 module.exports = runPostcss;
