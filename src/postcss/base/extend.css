@@ -1,0 +1,147 @@
+.bg_cc_base {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+.bg_contain {
+  @extend .bg_cc_base;
+  background-size: contain;
+}
+.bg_contain-d_ib {
+  @extend .bg_contain;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  outline: none;
+}
+.bg_cover {
+  @extend .bg_cc_base;
+  background-size: cover;
+}
+.bg_cover-d_ib {
+  @extend .bg_cover;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  outline: none;
+}
+/*  */
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* transform */
+.transform-scale {
+  transition: transform ease-in .1s;
+  transform: scale(.9, .9);
+}
+/* animate */
+.animate-bounceIn {
+  animation-duration: .4s;
+  animation-name: bounceIn;
+}
+@-webkit-keyframes bounceIn {
+  0% {
+    transform: scaleX(1);
+  }
+  33% {
+    transform: scale3d(1.03,1.03,1.03);
+  }
+  66% {
+    transform: scale3d(.97,.97,.97);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.animate-fadeIn {
+  animation-duration: .5s;
+  animation-name: fadeIn;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    transform: scale(.1);
+    opacity: .1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animate-slideDown {
+  animation-duration: .5s;
+  animation-name: slideDown;
+  animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes slideDown {
+  0% {
+    transform: translateY(-110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.animate-slideUp {
+  animation-duration: .5s;
+  animation-name: slideUp;
+  animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes slideUp {
+  0% {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+/*  */
+.fz12 {
+  font-size: .24rem;
+  @media (min-width: 360px) {
+    font-size: .22rem;
+  }
+  @media (min-width: 400px) {
+    font-size: .2rem;
+  }
+}
+.fz14 {
+  font-size: .28rem;
+  @media (min-width: 360px) {
+    font-size: .26rem;
+  }
+  @media (min-width: 400px) {
+    font-size: .25rem;
+  }
+}
+.fz16 {
+  font-size: .32rem;
+  @media (min-width: 360px) {
+    font-size: .28rem;
+  }
+  @media (min-width: 400px) {
+    font-size: .26rem;
+  }
+}
+.fz18 {
+  font-size: .36rem;
+  @media (min-width: 360px) {
+    font-size: .32rem;
+  }
+  @media (min-width: 400px) {
+    font-size: .30rem;
+  }
+}
+.fz20 {
+  font-size: .4rem;
+  @media (min-width: 360px) {
+    font-size: .361rem;
+  }
+  @media (min-width: 400px) {
+    font-size: .32rem;
+  }
+}

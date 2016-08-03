@@ -1,0 +1,30 @@
+.c-t-g {
+  color: $color-text-g;
+}
+.c-hl-1 {
+  color: $color-text-hl0;
+}
+.bg-box1 {
+  color: #fff;
+  background-color: $color-bg-0;
+}
+.hide {
+  display: none;
+}
+/* .drop-box */
+.drop-box {
+  display: none;
+  overflow: hidden;
+}
+.drop-box .inner {
+  @extend .animate-slideDown;
+}
+.expand .drop-box {
+  display: block;
+}
+/* user select */
+a[class^=btn],
+button[class^=btn],
+.tab .nav li {
+  user-select: none;
+}
