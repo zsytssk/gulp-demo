@@ -20,7 +20,7 @@ var processors = [
   postcss_extend(),
   postcss_url({
     url: 'inline',
-    maxSize: 20,
+    maxSize: 10,
     fallback: function (url, x1, x2, dir, to) {
       var project_path = process.cwd();
       var img_ab_path = path.resolve(dir, url);
@@ -37,7 +37,16 @@ var processors = [
     core: false
   })
 ];
-
+var processors2 = [
+  postcss_url({
+    url: 'inline',
+    maxSize: 10,
+    fallback: function (url, x1, x2, dir, to) {
+      var result_path = '../../../images/game/fish/' + url.replace('../images/', '');
+      return result_path;
+    }
+  })
+];
 function runPostcss() {
   var files = [
     dirs.src + '/postcss/*.*'
@@ -49,7 +58,12 @@ function runPostcss() {
       to: dirs.dist + '/css/images'
     }))
     .pipe(csscomb())
-    .pipe(gulp.dest(dirs.dist + '/css'));
+    .pipe(gulp.dest(dirs.dist + '/css'))
+    .pipe(postcss(processors2, {
+      to: 'dist/style/images'
+    }))
+    .pipe(csscomb())
+    .pipe(gulp.dest('../git/gameHall/www/files/css/game/fish/'));
 
   return merge(style);
 }
