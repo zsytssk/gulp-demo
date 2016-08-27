@@ -1,31 +1,44 @@
 var gulp = require('gulp');
-var runPostcss = require('./gulp/tasks/postcss');
-var runPug = require('./gulp/tasks/pug');
-var concatjs = require('./gulp/tasks/concatjs');
+var activeTask = ['postcss', 'pug'];
 
 global.dirs = {
   src: './src',
   dist: './dist',
+  tasks: {
+    'concatjs': './gulp/tasks/concatjs',
+    'postcss': './gulp/tasks/postcss',
+    'pug': './gulp/tasks/pug'
+  },
+  watch_paths: {
+    concatjs: '/**/*.js',
+    postcss: '/**/*.css',
+    pug: '/**/*.pug'
+  },
+  src_paths: {
+    concatjs: '/js/*.*',
+    postcss: '/postcss/*.*',
+    pug: '/pug/*.*'
+  },
+  dest_paths: {
+    concatjs: '/js',
+    postcss: '/css',
+    pug: ''
+  },
+  git_paths: {
+    concatjs: '/js',
+    postcss: '/css',
+    pug: ''
+  }
 };
 
-gulp.task('concatjs', concatjs);
-gulp.task('css', runPostcss);
-gulp.task('pug', runPug);
-
-var keyArr = [];
-var activeTask = {
-  'concatjs': '/**/*.js',
-  'css': '/**/*.css',
-  'pug': '/**/*.pug'
-};
-
+for (var i = 0; i < activeTask.length; i++) {
+  gulp.task(activeTask[i], require(dirs.tasks[activeTask[i]]));
+}
 gulp.task('watch', function () {
-  for (var key in activeTask) {
-    gulp.watch(dirs.src + activeTask[key], gulp.parallel(key));
+  for (var i = 0; i < activeTask.length; i++) {
+    gulp.watch(dirs.src + dirs.watch_paths[activeTask[i]], gulp.parallel(activeTask[i]));
   }
 });
+activeTask.push('watch');
 
-for (var key in activeTask) {
-  keyArr.push(key);
-}
-gulp.task('default', gulp.parallel('pug', 'css', 'watch'));
+gulp.task('default', gulp.parallel.apply(this, activeTask));
