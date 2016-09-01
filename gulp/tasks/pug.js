@@ -8,10 +8,10 @@ var options = {
 };
 
 function runPug() {
-  var template = gulp.src(dirs.src + '/pug/*.*')
+  var template = gulp.src(config.src + config.src_paths.pug)
     .pipe(errorHandler())
     .pipe(pug(options))
-    .pipe(gulp.dest(dirs.dist));
+    .pipe(gulp.dest(config.dist));
   return merge(template);
 }
 
