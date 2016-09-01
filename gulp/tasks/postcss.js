@@ -2,13 +2,12 @@ var gulp = require('gulp');
 var errorHandler = require('../util/errorHandler');
 var merge = require('merge-stream');
 var path = require('path');
-var rename = require('gulp-rename');
 
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var utilities = require('postcss-utilities');
-var animation = require("postcss-animation");
+var animation = require('postcss-animation');
 var postcss_url = require('postcss-url');
 var precss = require('precss');
 var stylefmt = require('stylefmt');
