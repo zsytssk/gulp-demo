@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var errorHandler = require('../util/errorHandler');
 var merge = require('merge-stream');
 var path = require('path');
+var config = require('./../config');
 
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
