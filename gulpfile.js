@@ -1,16 +1,22 @@
-var gulp = require('gulp');
-var config = require('./gulp/config');
-activeTask = config.activeTask;
+let gulp = require('gulp');
+let config = require('./gulp/config');
+let config_activeTasks = config.activeTasks;
 
-for (var i = 0; i < activeTask.length; i++) {
-  console.log(activeTask[i]);
-  gulp.task(activeTask[i], require(config.tasks[activeTask[i]]));
+let task_list = [];
+for (let i = 0; i < config_activeTasks.length; i++) {
+  let task_name = config_activeTasks[i];
+  let task_model = config[config_activeTasks[i]].model;
+  gulp.task(task_name, require(task_model));
+  task_list.push(task_name);
 }
+
 gulp.task('watch', function () {
-  for (var i = 0; i < activeTask.length; i++) {
-    gulp.watch(config.src + config.watch_paths[activeTask[i]], gulp.parallel(activeTask[i]));
+  for (let i = 0; i < config_activeTasks.length; i++) {
+    let task_name = config_activeTasks[i];
+    let task_watch_paths = config[config_activeTasks[i]].watch_paths;
+    gulp.watch(config.src + task_watch_paths, gulp.parallel(task_name));
   }
 });
-activeTask.push('watch');
+task_list.push('watch');
 
-gulp.task('default', gulp.parallel.apply(this, activeTask));
+gulp.task('default', gulp.parallel.apply(this, task_list));

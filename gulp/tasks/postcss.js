@@ -3,6 +3,7 @@ var errorHandler = require('../util/errorHandler');
 var merge = require('merge-stream');
 var path = require('path');
 var config = require('./../config');
+var config_postcss = require('./../config');
 
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -12,6 +13,9 @@ var animation = require('postcss-animation');
 var postcss_url = require('postcss-url');
 var precss = require('precss');
 var stylefmt = require('stylefmt');
+
+var src = config.src + config_postcss.src_paths;
+var dist = config.src + config_postcss.dest_paths;
 
 var processors = [
   precss(),
@@ -49,26 +53,21 @@ var processors2 = [
 ];
 
 function runPostcss() {
-  var files, style1;
-  files = [
-    config.src + config.src_paths.postcss
-  ];
-
-  style1 = gulp.src(files[0])
+  var style = gulp.src(src)
     .pipe(errorHandler())
     .pipe(postcss(processors, {
-      to: config.dist + config.dest_paths.postcss + '/images'
+      to: dist + '/images'
     }))
-    .pipe(gulp.dest(config.dist + config.dest_paths.postcss));
+    .pipe(gulp.dest(dist));
 
-  if (config.isInBiaoji()) {
-    // 在标记中要做的
-    style1 = style1.pipe(postcss(processors2, {
-        to: config.dist + config.dest_paths.postcss + '/images'
-      }))
-      .pipe(gulp.dest(config.biaoji.cssPath));
-  }
-  return merge(style1);
+  // if (config.isInBiaoji()) {
+  //   // 在标记中要做的
+  //   style1 = style1.pipe(postcss(processors2, {
+  //       to: config.dist + config.dest_paths.postcss + '/images'
+  //     }))
+  //     .pipe(gulp.dest(config.biaoji.cssPath));
+  // }
+  return merge(style);
 }
 
 module.exports = runPostcss;
