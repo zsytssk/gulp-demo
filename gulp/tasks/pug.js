@@ -1,23 +1,20 @@
-var gulp = require('gulp');
-var pug = require('gulp-pug');
-var merge = require('merge-stream');
-var errorHandler = require('../util/errorHandler');
-var config = require('./../config');
-var config_pug = config.pug;
+let gulp = require('gulp');
+let pug = require('gulp-pug');
+let merge = require('merge-stream');
+let errorHandler = require('../util/errorHandler');
+let config = require('./../config');
+let config_pug = config.pug;
 
 
-var src = config.src + config_pug.src_paths;
-var dist = config.dist + config_pug.dest_paths;
+let src = config.src + config_pug.src_paths;
+let dist = config.dist + config_pug.dest_paths;
 
-
-var options = {
+let options = {
   pretty: true
 };
 
-
-
 function runPug() {
-  var template = gulp.src()
+  let template = gulp.src(src)
     .pipe(errorHandler())
     .pipe(pug(options))
     .pipe(gulp.dest(dist));

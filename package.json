@@ -6,7 +6,7 @@
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "cssnano": "^3.5.2",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "gulpjs/gulp#4.0",
     "gulp-concat": "^2.6.1",
     "gulp-minify": "0.0.14",
     "gulp-notify": "^2.2.0",
@@ -20,7 +20,8 @@
     "postcss-utilities": "^0.3.0",
     "precss": "^1.4.0",
     "pug": "^2.0.0-beta5",
-    "stylefmt": "^4.2.3"
+    "stylefmt": "^4.2.3",
+    "stylelint-config-standard": "^15.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,33 +1,33 @@
-var gulp = require('gulp');
-var errorHandler = require('../util/errorHandler');
-var merge = require('merge-stream');
-var path = require('path');
-var config = require('./../config');
-var config_postcss = require('./../config');
+let gulp = require('gulp');
+let errorHandler = require('../util/errorHandler');
+let merge = require('merge-stream');
+let path = require('path');
+let config = require('./../config');
+let config_postcss = config.postcss;
 
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var cssnano = require('cssnano');
-var utilities = require('postcss-utilities');
-var animation = require('postcss-animation');
-var postcss_url = require('postcss-url');
-var precss = require('precss');
-var stylefmt = require('stylefmt');
+let postcss = require('gulp-postcss');
+let autoprefixer = require('autoprefixer');
+let cssnano = require('cssnano');
+let utilities = require('postcss-utilities');
+let animation = require('postcss-animation');
+let postcss_url = require('postcss-url');
+let precss = require('precss');
+let stylefmt = require('stylefmt');
 
-var src = config.src + config_postcss.src_paths;
-var dist = config.src + config_postcss.dest_paths;
+let src = config.src + config_postcss.src_paths;
+let dist = config.dist + config_postcss.dest_paths;
 
-var processors = [
+let processors = [
   precss(),
   utilities(),
   postcss_url({
     url: 'inline',
     maxSize: 10,
     fallback: function (url, x1, x2, dir, to) {
-      var project_path = process.cwd();
-      var img_ab_path = path.resolve(dir, url);
-      var des_path = path.resolve(project_path, to);
-      var result_path = path.relative(des_path, img_ab_path);
+      let project_path = process.cwd();
+      let img_ab_path = path.resolve(dir, url);
+      let des_path = path.resolve(project_path, to);
+      let result_path = path.relative(des_path, img_ab_path);
       return result_path;
     }
   }),
@@ -41,19 +41,19 @@ var processors = [
   stylefmt()
 ];
 
-var processors2 = [
+let processors2 = [
   postcss_url({
     url: 'inline',
     maxSize: 10,
     fallback: function (url, x1, x2, dir, to) {
-      var result_path = config.biaoji.imgPathInsideCss + url.replace('../images/', '');
+      let result_path = config.biaoji.imgPathInsideCss + url.replace('../images/', '');
       return result_path;
     }
   })
 ];
 
 function runPostcss() {
-  var style = gulp.src(src)
+  let style = gulp.src(src)
     .pipe(errorHandler())
     .pipe(postcss(processors, {
       to: dist + '/images'

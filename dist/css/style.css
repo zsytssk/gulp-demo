@@ -1,0 +1,290 @@
+.c-t-g {
+  color: $color-text-g;
+}
+
+.c-hl-1 {
+  color: $color-text-hl0;
+}
+
+.bg-box1 {
+  color: #fff;
+  background-color: $color-bg-0;
+}
+
+/* .drop-box */
+
+.drop-box,
+.hide {
+  display: none;
+}
+
+.drop-box {
+  overflow: hidden;
+}
+
+.expand .drop-box {
+  display: block;
+}
+
+/* user select */
+
+.tab .nav li,
+a[class^=btn],
+button[class^=btn] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  -webkit-text-size-adjust: none;
+  background: #f5f5f5;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+figure {
+  margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font: 400 0.75em/1.5 STHeiti SC, Droid Sans Fallback, arial, 5b8b4f53;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: courier new,courier,monospace;
+}
+
+small {
+  font-size: 12px;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  outline: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+legend {
+  color: #000;
+}
+
+fieldset,
+img {
+  border: 0;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: Microsoft YaHei;
+}
+
+/* clearfix */
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+/* body */
+
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+.img-box img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* RESET */
+
+html {
+  font-size: 20px;
+}
+
+body {
+  font-size: 0.7rem;
+  background-color: #f8f8f8;
+}
+/*device compatibility*/
+/*@media only screen and (max-width: 440px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  html {
+    font-size: 17px;
+  }
+}*/

@@ -13,8 +13,8 @@ for (let i = 0; i < config_activeTasks.length; i++) {
 gulp.task('watch', function () {
   for (let i = 0; i < config_activeTasks.length; i++) {
     let task_name = config_activeTasks[i];
-    let task_watch_paths = config[config_activeTasks[i]].watch_paths;
-    gulp.watch(config.src + task_watch_paths, gulp.parallel(task_name));
+    let task_watch_paths = config.src + config[config_activeTasks[i]].watch_paths;
+    gulp.watch(task_watch_paths, gulp.parallel(task_name));
   }
 });
 task_list.push('watch');
